@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+
+    <title>Pushsoft AIO</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        @-webkit-keyframes rotate-animation {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        @keyframes rotate-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        body.launching {
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            background-color: #123d40;
+            background-position: center;
+        }
+        body.launching::before {
+            -webkit-animation: rotate-animation 1s linear infinite;
+            animation: rotate-animation 1s linear infinite;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            background-image: url(./resources/images/loading.png);
+            background-position: center;
+            content: '';
+            position: absolute;
+            margin-top: -15px;
+            margin-left: -15px;
+            top: 50%;
+            left: 50%;
+            width: 41px;
+            height: 41px;
+        }
+    </style>
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script id="microloader" data-app="e804992c-2117-4913-9e81-9710ae5b4539" type="text/javascript" src="bootstrap.js"></script>
+
+</head>
+<body class="launching">
+</body>
+</html>

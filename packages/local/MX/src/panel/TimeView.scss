@@ -1,0 +1,105 @@
+
+$needle-circle-size: dynamic(32px);
+$needle-dot-size: dynamic(8px);
+$needle-line-height: dynamic(2px);
+
+$needle-circle-margin-right: dynamic(8px);
+
+
+.x-timeview {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: #eeeeee;
+    .circle-fake {
+        position: absolute;
+        border-radius: 50%;
+        height: $needle-circle-size;
+        width: $needle-circle-size;
+        cursor: move;
+        cursor: grab;
+        cursor: -webkit-grab;
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.time-circularView {
+    //-webkit-tap-highlight-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.time-cell {
+    position: absolute;
+    width: 50%;
+    top: calc(50% - #{$needle-circle-size / 2});
+    left: 50%;
+    text-align: right;
+    @include transform-origin(left center);
+    font-size: 13px;
+    span {
+        display: inline-block;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.87);
+        border-radius: 50%;
+        width: $needle-circle-size;
+        height: $needle-circle-size;
+        line-height: $needle-circle-size;
+        text-align: center;
+        margin-right: $needle-circle-margin-right;
+    }
+    &.cell-selected {
+        span {
+            color: #fff;
+        }
+    }
+}
+
+@for $i from 1 through 24 {
+    $name: ($i * 5);
+    $degree: (6 * 2.5 * $i - 90);
+    .cell-rotate-#{$name} {
+        @include transform(rotate(#{$degree}deg));
+        span {
+            @include transform(rotate(#{-$degree}deg));
+        }
+    }
+}
+
+.time-needle {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - #{$needle-circle-size / 2});
+    width: 50%;
+    font-size: 0;
+    @include transform-origin(left center);
+    transition: 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    span {
+        display: inline-block;
+        background-color: $base-color;
+        vertical-align: middle;
+    }
+    .dot {
+        width: $needle-dot-size;
+        height: $needle-dot-size;
+        border-radius: 50%;
+    }
+
+    $sum: $needle-circle-size + $needle-dot-size + $needle-circle-margin-right;
+    .line {
+        height: $needle-line-height;
+        width: calc(100% - #{$sum});
+    }
+    .circle {
+        border-radius: 50%;
+        height: $needle-circle-size;
+        width: $needle-circle-size;
+    }
+
+    &.needle-quick {
+        transition: none;
+    }
+}

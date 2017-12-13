@@ -1,0 +1,19 @@
+.error-page-container {
+    background-color: #000;
+    background-size: cover;
+    color: #fff;
+
+    .x-panel-body-el {
+        background-color: transparent;
+        color: #fff;
+    }
+}
+
+.error-page-top-text {
+    font-size: 10rem;
+    line-height: 10rem;
+}
+.error-page-desc {
+    text-align: center;
+    font-size: 1.3rem;
+}
