@@ -1,7 +1,7 @@
 
 Since Sencha ExtJS 6.5 Modern didn't provide a timepickerfield/timefield, so I wrote one.
 
-## Screen Shots
+## Screenshots
 
 ![12-Hour](https://github.com/lovelyelfpop/ExtJS6_5-Modern-TimePicker/raw/master/screenshots/ampm.png)
 
@@ -15,7 +15,7 @@ Since Sencha ExtJS 6.5 Modern didn't provide a timepickerfield/timefield, so I w
 If you have not already done so, download and unpack the Ext JS framework from either the Products section 
 of the main Sencha website [sencha.com](www.sencha.com) or from the downloads section of the Sencha Support portal. 
 
-## Add Cmd to your App
+## Add Framework to your App
 
 Once you have your application where you want it, "cd" into its directory in your Command Line Interface (CLI).  Then, 
 issue the following command:
