@@ -34,3 +34,22 @@ Run this command so that Cmd will generate a web server for you:
 You can now visit the resulting address displayed in your console.  It will usually be found here:
 
   	http://localhost:1841
+
+## Note
+
+With Sencha Cmd 6.5 you can write code using ES6+, this application project uses ES6. 
+
+If you want to use this component in your none-ES6+ projects, you should translate it to ES5.
+
+If you want your none-ES6+ projects to use ES6+, you can enable transpiler in `app.json` as below:
+
+```
+    "language": {
+        "js": {
+            "input": "ES6",
+            "output": "ES5"
+        }
+    },
+```
+
+For more details, please refer to ![Announcing Ext JS 6.5.2 and Sencha Cmd 6.5.2 GA](https://www.sencha.com/blog/announcing-ext-js-6-5-2-sencha-cmd-6-5-2-ga/)
